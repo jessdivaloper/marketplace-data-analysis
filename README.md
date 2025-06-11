@@ -27,18 +27,18 @@ A imagem abaixo representa o relacionamento entre as tabelas exportadas do banco
 
 O projeto está divido em 4 notebooks, sendo eles:
 
-[1. Importação dos dados](notebooks\1.Importacao_dados.ipynb)
+[1. Importação dos dados](notebooks/1.Importacao_dados.ipynb)
 
 Este script em Python automatiza o processo de leitura de arquivos .csv armazenados no Cloud Storage, realiza transformações necessárias e carrega os dados em tabelas no BigQuery. Trata-se de uma alternativa manual à orquestração via Airflow, ideal para cenários em que o uso do Airflow não é viável ou desejado.
 
-No entanto, a inserção dos dados foi realizada por meio da DAG [Ingestão de Dados](dag\ingestao_dados.py), orquestrada com o Cloud Composer, que automatiza a criação das tabelas no BigQuery e o carregamento dos dados.
+No entanto, a inserção dos dados foi realizada por meio da DAG [Ingestão de Dados](dag/ingestao_dados.py), orquestrada com o Cloud Composer, que automatiza a criação das tabelas no BigQuery e o carregamento dos dados.
 
 
-[2. Limpeza dos dados](notebooks\2.limpeza_dados.ipynb)
+[2. Limpeza dos dados](notebooks/2.limpeza_dados.ipynb)
 
 O processo de limpeza de dados envolve a remoção de linhas duplicadas e a reorganização das relações entre as tabelas, garantindo a consistência e integridade dos dados após a exclusão.
 
-[3. Modelagem Dimensional](notebooks\3.modelagem_multidimensional.ipynb)
+[3. Modelagem Dimensional](notebooks/3.modelagem_multidimensional.ipynb)
 
 A modelagem dimensional é uma abordagem de estruturação de dados voltada para facilitar consultas analíticas e gerar insights de forma eficiente. No projeto, utilizei o modelo estrela (star schema), organizando os dados em tabelas fato, que centralizam os eventos transacionais (como vendas e comissões), e tabelas dimensão, que armazenam informações descritivas relacionadas (como cliente, produto e categoria). Essa modelagem permite maior desempenho em consultas e é amplamente adotada em projetos de Data Warehousing por sua simplicidade, escalabilidade e facilidade de entendimento por usuários de negócio.
 
@@ -49,7 +49,7 @@ A imagem abaixo representa os dados após procedimento de modelagem dimensional.
 
 ![alt text](img/modelagem_dimensional.png)
 
-[4. View e métricas](notebooks\4.views_metricas.ipynb)
+[4. View e métricas](notebooks/4.views_metricas.ipynb)
 
 Foram criadas diversas views com o objetivo de facilitar a análise dos dados, incluindo:
 
